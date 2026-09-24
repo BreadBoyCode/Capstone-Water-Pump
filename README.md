@@ -1,4 +1,1 @@
-
-I put a pv cell that allegedly has parameters that match the solar panel in #components
-according to gemini lmao
-I mostly made this to make sure I know how pushing works
+Start of the main Simulink file. So far, there is a pv cell block to model the solar panel, V and I sensors, which track pv and input to a matlab function block, which will contain the MPPT code. This code will be adapted to whichever microcontroller we use in the physical circuit. The output will be a PWM signal, which controls a buck converter between the solar panel and battery.  
