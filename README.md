@@ -1,2 +1,10 @@
-Start of the main Simulink file. So far, there is a pv cell block to model the solar panel, V and I sensors, which track pv and input to a matlab function block, which will contain the MPPT code. This code will be adapted to whichever microcontroller we use in the physical circuit. The output will be a PWM signal, which controls a buck converter between the solar panel and battery.  
-Commit 2: Added a bunch of stuff. I think the general high-level layout of the charging circuit is there but not certain. See the annotations within Simulink file. If you make changes to this file, please either make them on a separate copy and push that copy when done (ideal, I think) or make a new branch to push to.
+Added a bunch of simulation stuff and made a yet-untuned charge controller that is partially incomplete (need a way to track 85%-100% full battery). Simulation currently seems to be giving complete nonsense as current out of the solar panel is always at its max regardless of duty cycle. I think this is due to simscape's built-in buck converter being poopoo for our purposes. We should try making a custom one and seeing if that fixes the problem.
+OTHER IMPORTANT THINGS OF NOTE:
+
+* .gitignore file tells git and MATLAB source control not to track certain files and file types. When running Simulink, some local files that are machine-specific will be created (such as .slxc files), which should not be pushed to the repo. gitignore should prevent them from accidentally being committed.
+* vars.sldd: A data dictionary containing global variables that will apply to the main circuit and all subsystems or referenced models. Right now it only has the time step (Ts), but others could be added. This way, we can easily change the resolution of the simulation by having all blocks reference the same variable. To open and make changes, can open directly from the MATLAB file hierarchy or, within Simulink model, go MODELING-->DESIGN drop down-->Data Dictionary. Right click vars and click "Save Changes" after modifying. If Simulink isn't recognizing variables for some reason, click "Link to Data Dictionary" in the same drop down and browse for vars.sldd
+
+&#x20;
+
+
+

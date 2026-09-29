@@ -1,0 +1,15 @@
+# MATLAB / Simulink cache and generated build files
+slprj/
+*.slxc
+*.mexw64
+*.mex*
+*.autosave
+*_autosave.slx
+
+# Code generation outputs
+*_ert_rtw/
+*_grt_rtw/
+
+# Windows system files
+Thumbs.db
+Desktop.ini
