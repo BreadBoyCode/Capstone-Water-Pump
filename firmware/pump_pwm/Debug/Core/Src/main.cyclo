@@ -1,0 +1,7 @@
+../Core/Src/main.c:67:13:SetDuty	1
+../Core/Src/main.c:75:6:BSP_PB_Callback	3
+../Core/Src/main.c:96:5:main	4
+../Core/Src/main.c:168:6:SystemClock_Config	3
+../Core/Src/main.c:215:13:MX_TIM2_Init	4
+../Core/Src/main.c:264:13:MX_GPIO_Init	1
+../Core/Src/main.c:287:6:Error_Handler	1
